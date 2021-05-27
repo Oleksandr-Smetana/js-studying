@@ -1,4 +1,4 @@
-'go strict';
+'use strict';
 
 //========== 6. Ітерація по масиву ====================
 // const clients = ['Mango', 'Ajax', 'Poly'];
