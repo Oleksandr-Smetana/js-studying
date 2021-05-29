@@ -510,39 +510,224 @@
 // console.log(finalSettings);
 
 // ========== T30 ========== Задача. Карточки задач ==========
-function makeTask(data) {
-  const completed = false;
-  const category = 'General';
-  const priority = 'Normal';
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'General';
+//   const priority = 'Normal';
+//   // Change code below this line
+//   const newData = { completed, category, priority, ...data };
+//   return newData;
+//   // Change code above this line
+// }
+// console.log(makeTask({}));
+// console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+// console.log(makeTask({ category: "Finance", text: "Take interest" }));
+// console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+// console.log(makeTask({ text: "Buy bread" }));
+
+// ========== T31 ========== Операция rest для сбора всех аргументов функции ==========
+// // Change code below this line
+// function add(...args) {
+//   let sum = 0;
+//   for (const arg of args) {
+//     sum += arg;
+//   }
+//   return sum;
+//   // Change code above this line
+// }
+// console.log(add(15, 27));
+// console.log(add(12, 4, 11, 48));
+// console.log(add(32, 6, 13, 19, 8));
+// console.log(add(74, 11, 62, 46, 12, 36));
+
+// ========== T32 ========== Операция rest для сбора части аргументов функции ==========
+// // Change code below this line
+// function addOverNum(rate, ...args) {
+//   let total = 0;
+
+//   for (const arg of args) {
+//     if (arg > rate) {
+//     total += arg;
+//     }
+//   }
+//   return total;
+//   // Change code above this line
+// }
+// console.log(addOverNum(50, 15, 27));
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+// console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
+
+// ========== T33 ========== Задача. Массив совпадений ==========
+// // Change code below this line
+// function findMatches(values, ...rest) {
+//   const matches = []; // Don't change this line
+  
+//   for (const arg of rest) {
+//     if (values.includes(arg)) {
+//         matches.push(arg);
+//     }
+//   }
+//   // Change code above this line
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+// console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+// console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
+
+// ========== T34 ========== Методы объекта ==========
+// const bookShelf = {
+//   // Change code below this line
+//   books: ['The last kingdom', 'The guardian of dreams'],
+//   getBooks() {
+//     return 'Returning all books';
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName}`;
+//   },
+//   // Change code above this line
+// };
+// console.log(bookShelf.getBooks());
+// console.log(bookShelf.addBook("Haze"));
+// console.log(bookShelf.removeBook("Red sunset"));
+// console.log(bookShelf.updateBook("Sands of dune", "Dune"));
+
+// ========== T35 ========== Доступ к свойствам объекта в его методах ==========
+// const bookShelf = {
+//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//   updateBook(oldName, newName) {
+//     // Change code below this line
+//     const index = this.books.indexOf(oldName);
+// 	  this.books.splice(index, 1, newName);
+//     // Change code above this line
+//   },
+// };
+// bookShelf.updateBook("Haze", "Dungeon chronicles");
+// console.log(bookShelf.books);
+// bookShelf.updateBook("The last kingdom", "Dune");
+// console.log(bookShelf.books);
+
+// ========== T36 ========== Задача. Лавка зелий «У старой жабы» ==========
+// const atTheOldToad = {
+//   // Change code below this line
+//   potions: []
+//   // Change code above this line
+// };
+
+// ========== T37 ========== Задача. Получаем все зелья ==========
+// const atTheOldToad = {
+//   // Change code below this line
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   getPotions() {
+//     return this.potions;
+//   }
+//   // Change code above this line
+// };
+// console.log(atTheOldToad.getPotions());
+
+// ========== T38 ========== Задача. Добавляем новое зелье ==========
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   addPotion(potionName) {
+//     // Change code below this line
+//     this.potions.push(potionName);
+//     // Change code above this line
+//   },
+// };
+// atTheOldToad.addPotion('Invisibility');
+// console.log(atTheOldToad.potions);
+// atTheOldToad.addPotion('Power potion');
+// console.log(atTheOldToad.potions);
+
+// ========== T39 ========== Задача. Удаляем зелье ==========
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     // Change code below this line
+//     const index = this.potions.indexOf(potionName);
+//     this.potions.splice(index, 1);
+//     // Change code above this line
+//   },
+// };
+// atTheOldToad.removePotion("Dragon breath");
+// console.log(atTheOldToad.potions);
+// atTheOldToad.removePotion("Speed potion");
+// console.log(atTheOldToad.potions);
+
+// ========== T40 ========== Задача. Обновляем зелье ==========
+// const atTheOldToad = {
+//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//   updatePotionName(oldName, newName) {
+//     // Change code below this line
+//     const index = this.potions.indexOf(oldName);
+//     this.potions.splice(index, 1, newName);
+//     // Change code above this line
+//   },
+// };
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility");
+// console.log(atTheOldToad.potions);
+
+// ========== T41 ========== Задача. Расширяем инвентарь ==========
+const atTheOldToad = {
+  potions: [
+    { name: 'Speed potion', price: 460 },
+    { name: 'Dragon breath', price: 780 },
+    { name: 'Stone skin', price: 520 },
+  ],
   // Change code below this line
-  const newData = { completed, category, priority, ...data };
-  return newData;
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Potion ${potionName} is already equipped!`;
+    }
+
+    this.potions.push(potionName);
+  },
+  removePotion(potionName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === potionName) {
+        potions.splice(i, 1);
+        return potions;
+      }
+    }
+    return `Potion ${potionName} is not in inventory!`;
+  },
+  updatePotionName(oldName, newName) {
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === oldName) {
+        potions[i].name = newName;
+        return potions;
+      }
+    }
+    return `Potion ${oldName} is not in inventory!`;
+  },
   // Change code above this line
-}
-console.log(makeTask({}));
-console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
-console.log(makeTask({ category: "Finance", text: "Take interest" }));
-console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
-console.log(makeTask({ text: "Buy bread" }));
+};
 
-// ========== T31 ========== Задача. Карточки задач ==========
-
-// ========== T32 ========== Задача. Карточки задач ==========
-
-// ========== T33 ========== Задача. Карточки задач ==========
-
-// ========== T34 ========== Задача. Карточки задач ==========
-
-// ========== T35 ========== Задача. Карточки задач ==========
-
-// ========== T36 ========== Задача. Карточки задач ==========
-
-// ========== T37 ========== Задача. Карточки задач ==========
-
-// ========== T38 ========== Задача. Карточки задач ==========
-
-// ========== T39 ========== Задача. Карточки задач ==========
-
-// ========== T40 ========== Задача. Карточки задач ==========
-
-// ========== T41 ========== Задача. Карточки задач ==========
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.addPotion({ name: "Invisibility", price: 620 });
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.addPotion({ name: "Power potion", price: 270 });
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.removePotion("Dragon breath");
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.removePotion("Speed potion");
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+// console.log(atTheOldToad.getPotions());
+atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion");
+console.log(atTheOldToad.getPotions());
