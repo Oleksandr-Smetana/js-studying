@@ -133,28 +133,343 @@
 // console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
 
 // ========== T9 ========== Чистые функции ==========
-function changeEven(numbers, value) {
-    // Пиши код ниже этой строки
-  let newNumbers = [];
-  numbers.forEach((number) => {
-    if (number % 2 === 0) {
-      newNumbers.push(number + value);
-    } else {
-      newNumbers.push(number);
-    }
-  });
-  return newNumbers;
-    // Пиши код выше этой строки
-}
+// function changeEven(numbers, value) {
+//     // Пиши код ниже этой строки
+//   let newNumbers = [];
+//   numbers.forEach((number) => {
+//     if (number % 2 === 0) {
+//       newNumbers.push(number + value);
+//     } else {
+//       newNumbers.push(number);
+//     }
+//   });
+//   return newNumbers;
+//     // Пиши код выше этой строки
+// }
 
-console.log(changeEven([1, 2, 3, 4, 5], 10));
-console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
-console.log(changeEven([17, 24, 68, 31, 42], 100));
-console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
+// console.log(changeEven([17, 24, 68, 31, 42], 100));
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
 
 // ========== T10 ========== Метод map() ==========
-const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
-// Пиши код ниже этой строки
-const planetsLengths = planets.map(planet => planet.length);
+// const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
+// // Пиши код ниже этой строки
+// const planetsLengths = planets.map(planet => planet.length);
 
-console.log(planetsLengths);
+// console.log(planetsLengths);
+
+// ========== T11 ========== Метод map() и массив объектов ==========
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+//   // Пиши код ниже этой строки
+  
+// const titles = books.map(book => book.title);
+// console.log(titles);
+
+// ========== T12 ========== Метод flatMap() ==========
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+  
+// const genres = books.flatMap(book => book.genres);
+// console.log(genres);
+
+// ========== T13 ========== Задача. Имена пользователей ==========
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+
+// // Пиши код ниже этой строки
+// const getUserNames = users => {
+//     return users.map(user => user.name);
+//   };
+//   // Пиши код выше этой строки
+
+// console.log(getUserNames);
+
+// ========== T14 ========== Задача. Почты пользователей ==========
+// // Пиши код ниже этой строки
+// const getUserEmails = users => {
+//   return users.map(user => user.email);  
+//   };
+//   // Пиши код выше этой строки
+// console.log(getUserEmails);
+
+// ========== T15 ========== Методы filter и find ==========
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Пиши код ниже этой строки
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 !== 0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+// ========== T16 ========== Фильтрация уникальных элементов ==========
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика', 'мистика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика', 'приключения']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter((genre, idx, arr) => arr.indexOf(genre) === idx);
+  
+// console.log(allGenres);
+// console.log(uniqueGenres);
+
+// ========== T17 ========== Метод filter() и массив объектов ==========
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Бернард Корнуэлл';
+// // Пиши код ниже этой строки
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+// console.log(topRatedBooks);
+// console.log(booksByAuthor);
+
+// ========== T18 ========== Задача. Пользователи с цветом глаз ==========
+// // Пиши код ниже этой строки
+// const getUsersWithEyeColor = (users, color) => {
+//  return users.filter(user => user.eyeColor === color);
+// };
+// // Пиши код выше этой строки
+// console.log(getUsersWithEyeColor);
+
+// // ========== T19 ========== Задача. Пользователи в возрастной категории ==========
+// // Пиши код ниже этой строки
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//  return users.filter(user => user.age > minAge && user.age < maxAge);
+// };
+// // Пиши код выше этой строки
+// console.log(getUsersWithAge);
+
+// ========== T20 ========== Задача. Пользователи с другом ==========
+// // Пиши код ниже этой строки
+// const getUsersWithFriend = (users, friendName) => {
+//    return users.filter(user => user.friends.includes(friendName));
+// };
+// // Пиши код выше этой строки
+// console.log(getUsersWithFriend);
+
+// ========== T21 ========== Задача. Список друзей ==========
+// // Пиши код ниже этой строки
+// const getFriends = (users) => {
+//    return users.flatMap(user => user.friends).filter((friend, idx, arr) => arr.indexOf(friend) === idx);
+// };
+// // Пиши код выше этой строки
+// console.log(getFriends);
+
+// ========== T22 ========== Задача. Активные пользователи ==========
+// // Пиши код ниже этой строки
+// const getActiveUsers = (users) => {
+//    return users.filter(user => user.isActive);
+// };
+// // Пиши код выше этой строки
+// console.log(getActiveUsers);
+
+// ========== T23 ========== Задача. Неактивные пользователи ==========
+// // Пиши код ниже этой строки
+// const getInactiveUsers = (users) => {
+//    return users.filter(user => !user.isActive);
+// };
+// // Пиши код выше этой строки
+// console.log(getInactiveUsers);
+
+// ========== T24 ========== Метод find() ==========
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'Сон смешного человека';
+// const AUTHOR = 'Роберт Шекли';
+// // Пиши код ниже этой строки
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+// console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+// ========== T25 ========== Задача. Пользователь с почтой ==========
+// // Пиши код ниже этой строки
+// const getUserWithEmail = (users, email) => {
+//    return users.find(user => user.email === email);
+// };
+// // Пиши код выше этой строки
+// console.log(getUserWithEmail);
+
+// ========== T26 ========== Метод every() ==========
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const eachElementInFirstIsEven = firstArray.every(value => value % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every(value => value % 2 !== 0);
+
+// const eachElementInSecondIsEven = secondArray.every(value => value % 2 === 0);
+// const eachElementInSecondIsOdd = secondArray.every(value => value % 2 !== 0);
+
+// const eachElementInThirdIsEven = thirdArray.every(value => value % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every(value => value % 2 !== 0);
+
+// console.log(eachElementInFirstIsEven);
+// console.log(eachElementInFirstIsOdd);
+
+// ========== T27 ========== Задача. Все ли пользователи активны ==========
+// // Пиши код ниже этой строки
+// const isEveryUserActive = (users) => {
+//    return users.every(user => user.isActive);
+// };
+// // Пиши код выше этой строки
+// console.log(isEveryUserActive);
+
+// ========== T27 ========== Метод some() ==========
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+
+// const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
+// const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+
+// const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
+
+// console.log(anyElementInFirstIsEven);
+// console.log(anyElementInFirstIsOdd);
+
+// ========== T27 ========== Задача. Есть ли активные пользователи ==========
+// Пиши код ниже этой строки
+const isAnyUserActive = users => {
+   return users.some(user => user.isActive);
+};
+// Пиши код выше этой строки
+console.log(isAnyUserActive);
+
+// ========== T30 ========== Метод reduce() ==========
+
