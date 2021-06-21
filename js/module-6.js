@@ -464,12 +464,183 @@
 // console.log(anyElementInFirstIsOdd);
 
 // ========== T27 ========== Задача. Есть ли активные пользователи ==========
-// Пиши код ниже этой строки
-const isAnyUserActive = users => {
-   return users.some(user => user.isActive);
-};
-// Пиши код выше этой строки
-console.log(isAnyUserActive);
+// // Пиши код ниже этой строки
+// const isAnyUserActive = users => {
+//    return users.some(user => user.isActive);
+// };
+// // Пиши код выше этой строки
+// console.log(isAnyUserActive);
 
 // ========== T30 ========== Метод reduce() ==========
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// // Пиши код ниже этой строки
 
+// const totalPlayTime = playtimes.reduce(((previousValue, number) => previousValue +  number), 0);
+
+// // Пиши код выше этой строки
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// console.log(totalPlayTime);
+// console.log(averagePlayTime);
+
+// ========== T31 ========== Метод reduce() и массив объектов ==========
+// const players = [
+//   { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+// ];
+// // Пиши код ниже этой строки
+
+// const totalAveragePlaytimePerGame = players.reduce(((acc, player) => acc + player.playtime / player.gamesPlayed), 0);
+// console.log(totalAveragePlaytimePerGame);
+
+// ========== T32 ========== Задача. Общий баланс пользователей ==========
+// // Пиши код ниже этой строки
+// const calculateTotalBalance = users => {
+//    return users.reduce(((acc, user) => acc + user.balance), 0);
+// };
+// // Пиши код выше этой строки
+// console.log(calculateTotalBalance);
+
+// ========== T33 ========== Задача. Общее количество друзей ==========
+// // Пиши код ниже этой строки
+// const getTotalFriendCount = users => {
+//    return users.reduce(((acc, user) => acc + user.friends.length), 0);
+// };
+// // Пиши код выше этой строки
+// console.log(getTotalFriendCount);
+
+// ========== T34 ========== Метод sort() ==========
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Ли Танит',
+//   'Бернард Корнуэлл',
+//   'Роберт Шекли',
+//   'Федор Достоевский'
+// ];
+// // Пиши код ниже этой строки
+// const ascendingReleaseDates = [...releaseDates].sort();
+// const alphabeticalAuthors = [...authors].sort();
+
+// console.log(ascendingReleaseDates);
+// console.log(alphabeticalAuthors);
+
+// ========== T35 ========== Свой порядок сортировки чисел ==========
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// // Пиши код ниже этой строки
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+// const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+
+// console.log(ascendingReleaseDates);
+// console.log(descendingReleaseDates);
+
+// ========== T36 ========== Свой порядок сортировки строк ==========
+// const authors = [
+//     'Ли Танит',
+//     'Бернард Корнуэлл',
+//     'Роберт Шекли',
+//     'Федор Достоевский',
+//     'Говард Лавкрафт'
+//   ];
+//   // Пиши код ниже этой строки
+// const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+// const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+// console.log(authorsInAlphabetOrder);
+// console.log(authorsInReversedOrder);
+
+// ========== T37 ========== Сортировка объектов ==========
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+// ];
+// // Пиши код ниже этой строки
+
+// const sortedByAuthorName = [...books].sort((a, b) => a.author.localeCompare(b.author));
+// const sortedByReversedAuthorName = [...books].sort((a, b) => b.author.localeCompare(a.author));
+// const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+// const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
+
+// console.log(sortedByAuthorName);
+// console.log(sortedByReversedAuthorName);
+// console.log(sortedByAscendingRating);
+// console.log(sortedByDescentingRating);
+
+// ========== T38 ========== Задача. Сортировка по балансу ==========
+// // Пиши код ниже этой строки
+// const sortByAscendingBalance = users => {
+//    return [...users].sort((a, b) => a.balance - b.balance);
+// };
+// // Пиши код выше этой строки
+// console.log(sortByAscendingBalance);
+
+// ========== T39 ========== Задача. Сортировка по количеству друзей ==========
+// // Пиши код ниже этой строки
+// const sortByDescendingFriendCount = users => {
+//    return [...users].sort((a, b) => b.friends.length - a.friends.length);
+// };
+// // Пиши код выше этой строки
+// console.log(sortByDescendingFriendCount);
+
+// // ========== T40 ========== Задача. Сортировка по имени ==========
+// // Пиши код ниже этой строки
+// const sortByName = users => {
+//    return [...users].sort((a, b) => a.name.localeCompare(b.name));
+// };
+// // Пиши код выше этой строки
+// console.log(sortByName);
+
+// ========== T41 ========== Цепочки методов (чейнинг, chaining) ==========
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 8.14 },
+//   { title: 'Сны В Ведьмином Доме', author: 'Говард Лавкрафт', rating: 8.67 }
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Пиши код ниже этой строки
+
+// const names = [...books]
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .sort((a, b) => a.localeCompare(b));
+
+// ========== T42 ========== Задача. Пользователи и друзья ==========
+// // Пиши код ниже этой строки
+// const getNamesSortedByFriendCount = users => {
+//    return [...users].sort((a, b) => a.friends.length - b.friends.length)
+//      .filter((user, index, arr) => arr.indexOf(user) === index)
+//      .map(user => user.name)
+// };
+// // Пиши код выше этой строки
+// console.log(getNamesSortedByFriendCount);
+
+// ========== T43 ========== Задача. Имена друзей ==========
+// // Пиши код ниже этой строки
+// const getSortedFriends = users => {
+//    return [...users].flatMap(user => user.friends).filter((uniqueName, ind, arr) => arr.indexOf(uniqueName) === ind).sort((firstName, secondName) => firstName.localeCompare(secondName));
+// };
+// // Пиши код выше этой строки
+// console.log(getSortedFriends);
+
+// ========== T44 ========== Задача. Общий баланс ==========
+// Пиши код ниже этой строки
+const getTotalBalanceByGender = (users, gender) => {
+   return [...users]
+      .filter((user) => user.gender === gender)
+      .map((user) => user.balance)
+      .reduce((previousValue, value) => (previousValue += value), 0);
+};
+// Пиши код выше этой строки
+console.log(getTotalBalanceByGender);
