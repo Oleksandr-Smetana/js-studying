@@ -636,11 +636,11 @@
 
 // ========== T44 ========== Задача. Общий баланс ==========
 // Пиши код ниже этой строки
-const getTotalBalanceByGender = (users, gender) => {
-   return [...users]
-      .filter((user) => user.gender === gender)
-      .map((user) => user.balance)
-      .reduce((previousValue, value) => (previousValue += value), 0);
-};
-// Пиши код выше этой строки
-console.log(getTotalBalanceByGender);
+// const getTotalBalanceByGender = (users, gender) => {
+//    return [...users]
+//       .filter((user) => user.gender === gender)
+//       .map((user) => user.balance)
+//       .reduce((previousValue, value) => (previousValue += value), 0);
+// };
+// // Пиши код выше этой строки
+// console.log(getTotalBalanceByGender);
